@@ -2,7 +2,6 @@
 
 import { Column, Flex, Heading, SmartImage, SmartLink, Tag, Text } from '@/once-ui/components';
 import styles from './Posts.module.scss';
-import { formatDate } from '@/app/utils/formatDate';
 
 interface PostProps {
     post: any;
@@ -11,6 +10,25 @@ interface PostProps {
 }
 
 export default function Post({ post, thumbnail, direction }: PostProps) {
+    const formatDateRange = (startDate: string | undefined, endDate: string | undefined) => {
+        if (!startDate) return "";
+        
+        // Parse the YYYY-MM format
+        const [startYear, startMonth] = startDate.split('-').map(Number);
+        const startMonthName = new Date(startYear, startMonth - 1).toLocaleString('en-US', { month: 'short' });
+        
+        if (endDate === "Present") {
+            return `${startMonthName} ${startYear} - Present`;
+        }
+        
+        if (!endDate) return `${startMonthName} ${startYear}`;
+        
+        const [endYear, endMonth] = endDate.split('-').map(Number);
+        const endMonthName = new Date(endYear, endMonth - 1).toLocaleString('en-US', { month: 'short' });
+        
+        return `${startMonthName} ${startYear} - ${endMonthName} ${endYear}`;
+    };
+
     return (
         <SmartLink
             fillWidth
@@ -53,7 +71,7 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
                     <Text
                         variant="label-default-s"
                         onBackground="neutral-weak">
-                        {formatDate(post.metadata.publishedAt, false)}
+                        {formatDateRange(post.metadata.publishedAt, post.metadata.endDate)}
                     </Text>
                     { post.metadata.tag &&
                         <Tag

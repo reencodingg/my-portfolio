@@ -76,16 +76,19 @@ export default async function Project({
         <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
-        <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        <Heading variant="display-strong-l" style={{ marginBottom: "2rem" }}>{post.metadata.title}</Heading>
       </Column>
       {post.metadata.images.length > 0 && (
+        <Column maxWidth="s" horizontal="center">
         <SmartImage
           priority
           aspectRatio="16 / 9"
           radius="m"
           alt="image"
           src={post.metadata.images[0]}
+            style={{ opacity: 0.8 }}
         />
+        </Column>
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <Flex gap="12" marginBottom="24" vertical="center">
