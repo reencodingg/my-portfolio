@@ -129,13 +129,19 @@ export default function About() {
                 vertical="center"
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Flex paddingX="8">Schedule a call</Flex>
-                <IconButton
+                <a 
                   href={about.calendar.link}
-                  data-border="rounded"
-                  variant="secondary"
-                  icon="chevronRight"
-                />
+                  download="Nurazreen_Saidin_Resume.pdf"
+                  style={{
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  <Flex paddingX="8" vertical="center" gap="8">
+                    {about.calendar.label}
+                    <Icon name="chevronRight" size="s" />
+                  </Flex>
+                </a>
               </Flex>
             )}
             <Heading className={styles.textAlign} variant="display-strong-xl">
@@ -253,11 +259,16 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                  <Column key={`${institution.name}-${index}`} fillWidth>
+                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      <Text variant="heading-strong-s" onBackground="brand-weak">
+                        {institution.timeframe}
+                      </Text>
+                    </Flex>
+                    <Text variant="body-default-l" onBackground="neutral-weak">
                       {institution.description}
                     </Text>
                   </Column>

@@ -1,4 +1,7 @@
 import { Logo } from "@/once-ui/components";
+import { Flex, Tag, Column, Text } from "@/once-ui/components";
+import SkillItem from "@/components/SkillItem";
+import { baseURL } from "@/app/resources";
 
 const person = {
   firstName: "Nurazreen",
@@ -82,7 +85,8 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://drive.google.com/file/d/1aF4-PlOAD6ZQhZTjzePiSZUPu28mqOaJ/view?usp=sharing",
+    label: "View Resume"
   },
   intro: {
     display: true,
@@ -136,14 +140,45 @@ const about = {
     institutions: [
       {
         name: "University of Malaya",
-        description: <>Bachelor of Information Systems (Honours) Information Systems Engineering</>,
-        timeframe: "2022 - Present"
+        description: (
+          <>
+            Bachelor of Computer Science (Information Systems)
+            <br />
+            Latest GPA: 3.8
+            <br />
+            Current CGPA: 3.3
+          </>
+        ),
+        timeframe: "Oct 2023 - Present"
       },
       {
-        name: "SMK Seri Garing",
-        description: <>Science Stream (Biology)</>,
-        timeframe: "2017 - 2021"
+        name: "University of Malaya",
+        description: (
+          <>
+            Foundation in Life Sciences
+            <br />
+            CGPA: 3.78
+            <br />
+            Dean's List Award for Semester 2
+            <br />
+            Muet Band: 4.5
+          </>
+        ),
+        timeframe: "Aug 2022 - Jun 2023"
       },
+      {
+        name: "MRSM Tun Ghafar Baba",
+        description: (
+          <>
+            Science
+            <br />
+            SPM: 3A+ 6A
+            <br />
+            Young Teacher: Chemistry, Physics, Mathematics
+          </>
+        ),
+        timeframe: "Jan 2020 - Apr 2022"
+      }
     ],
   },
   technical: {
@@ -152,22 +187,61 @@ const about = {
     skills: [
       {
         title: "Programming Languages",
-        description: <>Python, Java, JavaScript, HTML, CSS</>,
+        description: (
+          <Flex wrap gap="12" style={{ marginTop: '16px' }}>
+            <SkillItem icon="/images/skills/java.svg" name="Java" level="Intermediate" />
+            <SkillItem icon="/images/skills/python.svg" name="Python" level="Intermediate" />
+            <SkillItem icon="/images/skills/sql.svg" name="SQL" level="Intermediate" />
+            <SkillItem icon="/images/skills/cpp.svg" name="C++" level="Basic" />
+          </Flex>
+        ),
         images: []
       },
       {
-        title: "Web Development",
-        description: <>React, Next.js, Node.js, Express.js</>,
+        title: "Web & App Development",
+        description: (
+          <Flex wrap gap="12" style={{ marginTop: '16px' }}>
+            <SkillItem icon="/images/skills/android-studio.svg" name="Android Studio" level="Intermediate" />
+            <SkillItem icon="/images/skills/firebase.svg" name="Firebase" level="Intermediate" />
+            <SkillItem icon="/images/skills/javascript.svg" name="JavaScript" level="Intermediate" />
+            <SkillItem icon="/images/skills/flutter.svg" name="Flutter" level="Basic" />
+          </Flex>
+        ),
         images: []
       },
       {
-        title: "Database",
-        description: <>MySQL, MongoDB, PostgreSQL</>,
+        title: "UI/UX & Design Tools",
+        description: (
+          <Flex wrap gap="12" style={{ marginTop: '16px' }}>
+            <SkillItem icon="/images/skills/figma.svg" name="Figma" level="Proficient" />
+            <SkillItem icon="/images/skills/illustrator.svg" name="Adobe Illustrator" level="Intermediate" />
+            <SkillItem icon="/images/skills/canva.svg" name="Canva" level="Proficient" />
+          </Flex>
+        ),
         images: []
       },
       {
-        title: "Tools & Others",
-        description: <>Git, Figma, VS Code, Jira</>,
+        title: "Tools & Platforms",
+        description: (
+          <Flex wrap gap="12" style={{ marginTop: '16px' }}>
+            <SkillItem icon="/images/skills/git.svg" name="Git" level="Intermediate" />
+            <SkillItem icon="/images/skills/aws.svg" name="AWS" level="Basic" />
+            <SkillItem icon="/images/skills/word.svg" name="Microsoft Word" level="Proficient" />
+            <SkillItem icon="/images/skills/excel.svg" name="Microsoft Excel" level="Intermediate" />
+          </Flex>
+        ),
+        images: []
+      },
+      {
+        title: "Concepts & Methodologies",
+        description: (
+          <Flex wrap gap="12" style={{ marginTop: '16px' }}>
+            <SkillItem name="OOP" level="" />
+            <SkillItem name="Data Structures" level="" />
+            <SkillItem name="Networking" level="" />
+            <SkillItem name="Agile Methodologies" level="" />
+          </Flex>
+        ),
         images: []
       }
     ],
