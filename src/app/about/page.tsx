@@ -128,7 +128,7 @@ export default function About() {
                 marginBottom="m"
                 vertical="center"
               >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
+                <Icon paddingLeft="12" name="document" onBackground="brand-weak" />
                 <a 
                   href={about.calendar.link}
                   download="Nurazreen_Saidin_Resume.pdf"

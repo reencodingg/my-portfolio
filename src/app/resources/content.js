@@ -10,14 +10,14 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Aspiring IT Professional",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar.jpeg",
   email: "nutzreen@gmail.com",
   location: "Asia/Kuala_Lumpur", // IANA time zone identifier for Rawang, Selangor
   languages: ["English", "Malay"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
@@ -261,13 +261,24 @@ const blog = {
 
 const work = {
   path: "/work",
-  label: "Work",
-  title: `Work – ${person.name}`,
-  description: `Work and projects of ${person.name}`,
+  label: "Projects",
+  title: `Projects – ${person.name}`,
+  description: `Projects and portfolio of ${person.name}`,
   tableOfContent: {
     display: true,
     subItems: false,
   },
 };
 
-export { person, newsletter, social, home, about, blog, work };
+const contact = {
+  path: "/contact",
+  label: "Contact",
+  title: `Contact – ${person.name}`,
+  description: `Get in touch with ${person.name}`,
+  tableOfContent: {
+    display: true,
+    subItems: false,
+  },
+};
+
+export { person, newsletter, social, home, about, blog, work, contact };
