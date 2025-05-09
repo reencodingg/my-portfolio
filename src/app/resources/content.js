@@ -85,7 +85,7 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://drive.google.com/file/d/1wGpAtkXoLpRnsiYw_04048Jby580BMCL/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/1vBpKbR78krwSCWDqL7sDnX7Lhtk4fnTP/view?usp=sharing",
     label: "View Resume"
   },
   intro: {
